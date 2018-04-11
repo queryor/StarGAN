@@ -3,3 +3,6 @@ stargan/
 stargan_both/
 stargan_rafd/
 stargan_celebA/
+__pycache__/
+*.jpg
+*.png
