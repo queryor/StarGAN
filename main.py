@@ -4,10 +4,6 @@ from solver import Solver
 from data_loader import get_loader
 from torch.backends import cudnn
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
 def str2bool(v):
     return v.lower() in ('true')
 
@@ -106,8 +102,4 @@ if __name__ == '__main__':
 
     config = parser.parse_args()
     print(config)
-<<<<<<< HEAD
     main(config)
-=======
-    main(config)
->>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
