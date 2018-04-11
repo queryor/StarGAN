@@ -2,7 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+<<<<<<< HEAD
 from spectral_normalization import SpectralNorm
+=======
+>>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
 
 
 class ResidualBlock(nn.Module):
@@ -67,12 +70,20 @@ class Discriminator(nn.Module):
         super(Discriminator, self).__init__()
 
         layers = []
+<<<<<<< HEAD
         layers.append(SpectralNorm(nn.Conv2d(3, conv_dim, kernel_size=4, stride=2, padding=1)))
+=======
+        layers.append(nn.Conv2d(3, conv_dim, kernel_size=4, stride=2, padding=1))
+>>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
         layers.append(nn.LeakyReLU(0.01, inplace=True))
 
         curr_dim = conv_dim
         for i in range(1, repeat_num):
+<<<<<<< HEAD
             layers.append(SpectralNorm(nn.Conv2d(curr_dim, curr_dim*2, kernel_size=4, stride=2, padding=1)))
+=======
+            layers.append(nn.Conv2d(curr_dim, curr_dim*2, kernel_size=4, stride=2, padding=1))
+>>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
             layers.append(nn.LeakyReLU(0.01, inplace=True))
             curr_dim = curr_dim * 2
 
@@ -85,4 +96,8 @@ class Discriminator(nn.Module):
         h = self.main(x)
         out_real = self.conv1(h)
         out_aux = self.conv2(h)
+<<<<<<< HEAD
         return out_real.squeeze(), out_aux.squeeze()
+=======
+        return out_real.squeeze(), out_aux.squeeze()
+>>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
