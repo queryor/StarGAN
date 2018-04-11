@@ -84,11 +84,7 @@ class Solver(object):
 
         # Optimizers
         self.g_optimizer = torch.optim.Adam(self.G.parameters(), self.g_lr, [self.beta1, self.beta2])
-<<<<<<< HEAD
         self.d_optimizer = torch.optim.Adam(filter(lambda p:p.requires_grad,self.D.parameters()), self.d_lr, [self.beta1, self.beta2])
-=======
-        self.d_optimizer = torch.optim.Adam(self.D.parameters(), self.d_lr, [self.beta1, self.beta2])
->>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
 
         # Print networks
         self.print_network(self.G, 'G')
@@ -695,7 +691,6 @@ class Solver(object):
             save_image(self.denorm(fake_images.data), save_path, nrow=1, padding=0)
             print('Translated test images and saved into "{}"..!'.format(save_path))
 
-<<<<<<< HEAD
     def test_multi_my(real_x,orc_c):
         self.G.load_state_dict(torch.load('stargan_both/models/200000_G.pth'))
         self.G.eval()
@@ -724,8 +719,6 @@ class Solver(object):
         save_image(self.denorm(fake_images.data), save_path, nrow=1, padding=0)
         print('Translated test images and saved into "{}"..!'.format(save_path))
 
-=======
->>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
     def test_multi(self):
         """Facial attribute transfer and expression synthesis on CelebA."""
         # Load trained parameters
@@ -764,8 +757,4 @@ class Solver(object):
             # Save the translated images
             save_path = os.path.join(self.result_path, '{}_fake.png'.format(i+1))
             save_image(self.denorm(fake_images.data), save_path, nrow=1, padding=0)
-<<<<<<< HEAD
             print('Translated test images and saved into "{}"..!'.format(save_path))
-=======
-            print('Translated test images and saved into "{}"..!'.format(save_path))
->>>>>>> 5bf71d6c8fdb767ba3b284d9651f37ab90afc1fc
