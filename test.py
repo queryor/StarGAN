@@ -35,7 +35,7 @@ def denorm(x):
 
 G = Generator(64,5+8+2,6)
 transforms1 = transforms.Compose([
-    transforms.CenterCrop(300),
+    transforms.CenterCrop(200),
     transforms.Scale(216,interpolation=Image.ANTIALIAS),
     transforms.ToTensor(),
     transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))])
